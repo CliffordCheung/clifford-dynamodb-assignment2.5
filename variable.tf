@@ -11,6 +11,6 @@ variable "secondary_key" {
 variable "db_table_name" {
     type = string
     description = "dynamodb table name"
-    default = "clifford-dynamodb-table2"
+    default = "clifford-dynamodb-table5"
   
 }

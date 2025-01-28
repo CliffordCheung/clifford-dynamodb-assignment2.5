@@ -5,13 +5,13 @@ resource "aws_dynamodb_table_item" "item1" {
   
     for_each = {
         "978-0134685991" = {
-            genre = "Teachnology"
+            genre = "Technology"
             title = "Effective Java"
             author = "Joshua Bloch"
             stock = "1"
         }
         "978-0134685009" = {
-            genre = "Teachnology"
+            genre = "Technology"
             title = "Learning Python"
             author = "Mark Lutz"
             stock = "2"
@@ -29,7 +29,7 @@ resource "aws_dynamodb_table_item" "item1" {
             stock = "8"
         }
         "978-01346854325" = {
-            genre = "Teachnology"
+            genre = "Technology"
             title = "System Design"
             author = "Mark Lutz"
             stock = "0"
@@ -44,4 +44,5 @@ resource "aws_dynamodb_table_item" "item1" {
         "Stock": {"N": "${each.value.stock}"}
     }
     ITEM 
+    depends_on = [ module.dynamodb_table ]
 }
